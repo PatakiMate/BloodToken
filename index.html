@@ -14,1157 +14,1152 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="buttons.css" />
   </head>
-</html>
-<body class="bg-black" x-data="{hamburgerActive: false, state: 1}">
-  <div class="w-full min-h-screen bg-[url('images/Background.png')] bg-cover">
-    <div class="w-full min-h-screen bg-black bg-opacity-80 bg-cover">
-      <!-- Log In -->
-      <div
-        class="w-full h-[calc(100vh-100px)] flex items-center justify-center"
-        x-show="false"
-      >
-        <div class="w-full h-[100px] fixed top-0 justify-center hidden xl:flex">
-          <h1 class="mt-[20px] text-[48px]">LOG IN</h1>
-        </div>
+
+  <body
+    class="bg-black"
+    x-data="{hamburgerActive: false, state: 1, expanded: false}"
+  >
+    <div class="w-full min-h-screen bg-[url('images/Background.png')] bg-cover">
+      <div class="w-full min-h-screen bg-black bg-opacity-80 bg-cover">
+        <!-- Log In -->
         <div
-          class="w-full xl:w-[390px] h-screen xl:h-[484px] mt-[100px] bg-black flex flex-col justify-center xl:justify-start items-center px-10 border-none xl:border-solid border-[#43402E] border-[2px] relative"
+          class="w-full h-[calc(100vh-100px)] flex items-center justify-center"
+          x-show="false"
         >
-          <div class="w-[100%] h-[100%] absolute hidden xl:block">
-            <div
-              class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
-            ></div>
-            <div
-              class="triangle absolute border-b-[#43402E] bottom-0 left-[calc(50%-11px)]"
-            ></div>
-            <div
-              class="triangle absolute border-l-[#43402E] bottom-[-11px] right-[-11px] rotate-45"
-            ></div>
-            <div
-              class="triangle absolute border-r-[#43402E] bottom-[-11px] left-[-11px] rotate-[-45deg]"
-            ></div>
-            <div
-              class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-            ></div>
-            <div
-              class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-            ></div>
-          </div>
-          <img src="images/LoginDemon.png" class="w-[328px] mt-10" alt="" />
-          <h2 class="text-[24px] text-center">
-            Log in to the world<br />
-            of BLOOD tokens
-          </h2>
-          <p class="text-center mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
           <div
-            class="bg-[url('images/bigbutton.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[50px]"
+            class="w-full h-[100px] fixed top-0 justify-center hidden xl:flex"
           >
-            <h1 class="text-[16px] px-[80px]">LOG IN</h1>
+            <h1 class="mt-[20px] text-[48px]">LOG IN</h1>
+          </div>
+          <div
+            class="w-full xl:w-[390px] h-screen xl:h-[484px] mt-[100px] bg-black flex flex-col justify-center xl:justify-start items-center px-10 border-none xl:border-solid border-[#43402E] border-[2px] relative"
+          >
+            <div class="w-[100%] h-[100%] absolute hidden xl:block">
+              <div
+                class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+              ></div>
+              <div
+                class="triangle absolute border-b-[#43402E] bottom-0 left-[calc(50%-11px)]"
+              ></div>
+              <div
+                class="triangle absolute border-l-[#43402E] bottom-[-11px] right-[-11px] rotate-45"
+              ></div>
+              <div
+                class="triangle absolute border-r-[#43402E] bottom-[-11px] left-[-11px] rotate-[-45deg]"
+              ></div>
+              <div
+                class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+              ></div>
+              <div
+                class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+              ></div>
+            </div>
+            <img src="images/LoginDemon.png" class="w-[328px] mt-10" alt="" />
+            <h2 class="text-[24px] text-center">
+              Log in to the world<br />
+              of BLOOD tokens
+            </h2>
+            <p class="text-center mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div
+              class="bg-[url('images/bigbutton.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[50px]"
+            >
+              <h1 class="text-[16px] px-[80px]">LOG IN</h1>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Main -->
-      <div class="w-full" x-show="true">
-        <!-- Header -->
-        <div
-          class="w-full h-[100px] fixed top-0 justify-between items-center flex px-[15px] md:px-[80px] z-50"
-        >
-          <div class="flex justify-start items-center">
-            <img src="images/VampireLogo.svg" class="w-[69px]" alt="" />
-            <div class="justify-start items-center hidden xl:flex">
-              <div
-                x-on:click="state = 0; window.scrollTo({top: 0, behavior: 'smooth'})"
-                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center ml-[48px] relative hover:cursor-pointer"
-              >
+        <!-- Main -->
+        <div class="w-full" x-show="true">
+          <!-- Header -->
+          <div
+            class="w-full h-[100px] fixed top-0 justify-between items-center flex px-[15px] md:px-[80px] z-50"
+          >
+            <div class="flex justify-start items-center">
+              <img src="images/VampireLogo.svg" class="w-[69px]" alt="" />
+              <div class="justify-start items-center hidden xl:flex">
                 <div
-                  x-show="state == 0"
-                  x-transition
-                  class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
-                ></div>
-                <h1
-                  x-bind:class="state == 0 ? 'text-white' : 'text-[#928B64]'"
-                  class="text-[16px] absolute select-none"
+                  x-on:click="state = 0; window.scrollTo({top: 0, behavior: 'smooth'})"
+                  class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center ml-[48px] relative hover:cursor-pointer"
                 >
-                  BLOOD CONTRACT
-                </h1>
-              </div>
-              <div class="h-[2px] min-w-[40px] bg-[#43402E] mx-[8px]"></div>
-              <div
-                x-on:click="state = 1; window.scrollTo({top: 0, behavior: 'smooth'})"
-                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center relative hover:cursor-pointer"
-              >
-                <div
-                  x-show="state == 1"
-                  x-transition
-                  class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
-                ></div>
-                <h1
-                  x-bind:class="state == 1 ? 'text-white' : 'text-[#928B64]'"
-                  class="text-[16px] absolute select-none"
-                >
-                  LEADERBOARD
-                </h1>
-              </div>
-              <div class="h-[2px] min-w-[40px] bg-[#43402E] mx-[8px]"></div>
-              <div
-                x-on:click="state = 2; window.scrollTo({top: 0, behavior: 'smooth'});"
-                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center relative hover:cursor-pointer"
-              >
-                <div
-                  x-show="state == 2"
-                  x-transition
-                  class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
-                ></div>
-                <h1
-                  x-bind:class="state == 2 ? 'text-white' : 'text-[#928B64]'"
-                  class="text-[16px] absolute select-none"
-                >
-                  RAIDS
-                </h1>
-              </div>
-            </div>
-          </div>
-          <div class="flex justify-end items-center">
-            <img
-              src="images/BloodtokenStatue.svg"
-              class="w-[450px] mr-[-65px]"
-              alt=""
-            />
-            <div
-              x-on:click="hamburgerActive = !hamburgerActive"
-              x-bind:class="hamburgerActive ? `bg-[url('images/MiniButton.svg')]` : `bg-[url('images/MiniButtonInactive.svg')]` "
-              class="bg-[url('images/MiniButtonInactive.svg')] bg-cover min-w-[71px] h-[40px] flex items-center justify-center relative"
-            >
-              <img
-                x-bind:src="hamburgerActive ? 'images/HamburgerActive.png' : 'images/Hamburger.png'"
-                alt=""
-              />
-            </div>
-            <div
-              x-show="hamburgerActive"
-              x-transition
-              x-on:click.outside="hamburgerActive = false"
-              class="w-[171px] absolute bg-black top-[80px] right-[20px] md:right-[80px] border-solid border-[#43402E] border-[2px]"
-            >
-              <div class="w-[100%] h-[100%] absolute pointer-events-none">
-                <div
-                  class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                ></div>
-                <div
-                  class="triangle-small absolute border-r-[#43402E] bottom-[-8px] left-[-8px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle-small absolute border-l-[#43402E] top-[-8px] right-[-8px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                ></div>
-              </div>
-              <div
-                class="dark-gradient h-[40px] flex items-center justify-center border-solid border-[#43402E] border-[2px]"
-              >
-                <img
-                  src="images/eternl.svg"
-                  class="mr-[8px]"
-                  width="24px"
-                  alt=""
-                />
-                <h2 class="text-[#928B64]">2345 ... hjghj</h2>
-              </div>
-              <div class="lg:hidden">
-                <div class="bg-black h-[40px] flex items-center justify-center">
-                  <h2
-                    x-on:click="state = 0; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                  <div
+                    x-show="state == 0"
+                    x-transition
+                    class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
+                  ></div>
+                  <h1
                     x-bind:class="state == 0 ? 'text-white' : 'text-[#928B64]'"
-                    class="text-[#928B64]"
+                    class="text-[16px] absolute select-none"
                   >
                     BLOOD CONTRACT
-                  </h2>
+                  </h1>
                 </div>
-                <div class="bg-black h-[40px] flex items-center justify-center">
-                  <h2
-                    x-on:click="state = 1; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                <div class="h-[2px] min-w-[40px] bg-[#43402E] mx-[8px]"></div>
+                <div
+                  x-on:click="state = 1; window.scrollTo({top: 0, behavior: 'smooth'})"
+                  class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center relative hover:cursor-pointer"
+                >
+                  <div
+                    x-show="state == 1"
+                    x-transition
+                    class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
+                  ></div>
+                  <h1
                     x-bind:class="state == 1 ? 'text-white' : 'text-[#928B64]'"
-                    class="text-[#928B64]"
+                    class="text-[16px] absolute select-none"
                   >
                     LEADERBOARD
-                  </h2>
+                  </h1>
                 </div>
-                <div class="bg-black h-[40px] flex items-center justify-center">
-                  <h2
-                    x-on:click="state = 2; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                <div class="h-[2px] min-w-[40px] bg-[#43402E] mx-[8px]"></div>
+                <div
+                  x-on:click="state = 2; window.scrollTo({top: 0, behavior: 'smooth'});"
+                  class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center relative hover:cursor-pointer"
+                >
+                  <div
+                    x-show="state == 2"
+                    x-transition
+                    class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
+                  ></div>
+                  <h1
                     x-bind:class="state == 2 ? 'text-white' : 'text-[#928B64]'"
-                    class="text-[#928B64]"
+                    class="text-[16px] absolute select-none"
                   >
                     RAIDS
-                  </h2>
+                  </h1>
                 </div>
-              </div>
-              <div class="bg-black h-[40px] flex items-center justify-center">
-                <h2 class="text-[#928B64]">HISTORY</h2>
-              </div>
-              <div class="bg-black h-[40px] flex items-center justify-center">
-                <h2 class="text-[#928B64]">LOG OUT</h2>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- Blood Contract -->
-        <div
-          class="w-[100%] flex flex-col items-center justify-center"
-          x-show="state == 0"
-          x-transition:enter.opacity.duration.500ms
-        >
-          <div
-            class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
-          >
-            <div class="w-full min-h-[100px]"></div>
-            <h1 class="text-[48px] my-[50px]">BLOOD CONTRACT</h1>
-            <div
-              class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
-            >
+            <div class="flex justify-end items-center">
+              <img
+                src="images/BloodtokenStatue.svg"
+                class="w-[450px] mr-[-65px]"
+                alt=""
+              />
               <div
-                class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
+                x-on:click="hamburgerActive = !hamburgerActive"
+                x-bind:class="hamburgerActive ? `bg-[url('images/MiniButton.svg')]` : `bg-[url('images/MiniButtonInactive.svg')]` "
+                class="bg-[url('images/MiniButtonInactive.svg')] bg-cover min-w-[71px] h-[40px] flex items-center justify-center relative"
               >
-                <h2 class="ml-[40px]">SEE YOUR STAKES</h2>
-              </div>
-              <div class="w-[100%] h-[100%] absolute hidden md:block">
-                <!-- Middle top -->
-                <div
-                  class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
-                ></div>
-                <div
-                  class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
-                ></div>
-                <div
-                  class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
-                ></div>
-                <!-- Top right -->
-                <div
-                  class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <!-- Top left -->
-                <div
-                  class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                ></div>
-                <div
-                  class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
-                ></div>
-                <div
-                  class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                ></div>
-              </div>
-              <div
-                class="w-[calc(100%-6px)] h-[calc(100%-89px)] absolute border-solid border-[#43402E] border-[2px] top-[86px] flex items-center"
-              ></div>
-              <div
-                class="flex flex-col md:flex-row justify-start md:justify-between items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] md:space-x-5"
-              >
-                <div
-                  class="w-full lg:max-w-[605px] mt-[40px] flex-col grow order-last lg:order-first mb-[40px] lg:mb[0px]"
-                >
-                  <div class="flex gap-[3px] mb-[10px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <img src="images/bloodtoken_icon_01.png" alt="" />
-                      </div>
-                    </div>
-                    <div
-                      class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
-                          SEE YOUR STAKES:
-                        </h2>
-                        <div
-                          class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
-                        ></div>
-                        <h2 class="mr-[8px] text-white whitespace-nowrap">
-                          10 DAYS
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex gap-[3px] mb-[10px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <img src="images/bloodtoken_icon_01.png" alt="" />
-                      </div>
-                    </div>
-                    <div
-                      class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
-                          SEE YOUR STAKES:
-                        </h2>
-                        <div
-                          class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
-                        ></div>
-                        <h2 class="mr-[8px] text-white whitespace-nowrap">
-                          10 DAYS
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex gap-[3px] mb-[10px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <img src="images/bloodtoken_icon_01.png" alt="" />
-                      </div>
-                    </div>
-                    <div
-                      class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
-                          SEE YOUR STAKES:
-                        </h2>
-                        <div
-                          class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
-                        ></div>
-                        <h2 class="mr-[8px] text-white whitespace-nowrap">
-                          10 DAYS
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex gap-[3px] mb-[10px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <img src="images/bloodtoken_icon_01.png" alt="" />
-                      </div>
-                    </div>
-                    <div
-                      class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
-                          SEE YOUR STAKES:
-                        </h2>
-                        <div
-                          class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
-                        ></div>
-                        <h2 class="mr-[8px] text-white whitespace-nowrap">
-                          10 DAYS
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Total -->
-                  <div
-                    class="max-w-[605px] h-[40px] bg-[#43402E] flex justify-center items-center"
-                  >
-                    <div
-                      class="light-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                    >
-                      <h2 class="ml-[8px] text-white">TOTAL:</h2>
-                      <div
-                        class="border-[1px] border-dashed border-white grow mx-[8px] mt-[12px]"
-                      ></div>
-                      <h2 class="mr-[8px] text-white">21</h2>
-                    </div>
-                  </div>
-                  <!-- Button -->
-                  <div
-                    class="bg-[url('images/SmallButton.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[40px]"
-                  >
-                    <h1 class="text-[16px] text-effect">CLAIM</h1>
-                  </div>
-                </div>
                 <img
-                  src="images/BloodtokenDemon.svg"
-                  class="mt-[20px] object-contain order-first md:order-last w-full lg:max-w-[50%]"
+                  x-bind:src="hamburgerActive ? 'images/HamburgerActive.png' : 'images/Hamburger.png'"
                   alt=""
                 />
-                <!-- <div
-      class="bg-[url('images/BloodtokenDemon.png')] bg-contain bg-no-repeat w-[200px] max-w-[523px] h-[351px] grow mt-[20px]"
-    ></div> -->
               </div>
-            </div>
-            <div class="w-full min-h-[200px]"></div>
-          </div>
-        </div>
-        <!-- Leaderboard -->
-        <div
-          class="w-[100%] flex flex-col items-center justify-center"
-          x-show="state == 1"
-          x-transition:enter.opacity.duration.500ms
-        >
-          <div
-            class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
-          >
-            <div class="w-full min-h-[100px]"></div>
-            <h1 class="text-[48px] my-[50px]">LEADERBOARD</h1>
-            <div
-              class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
-            >
               <div
-                class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
+                x-show="hamburgerActive"
+                x-transition
+                x-on:click.outside="hamburgerActive = false"
+                class="w-[171px] absolute bg-black top-[80px] right-[20px] md:right-[80px] border-solid border-[#43402E] border-[2px]"
               >
-                <h2 class="ml-[40px]">SEE THE TOP LIST OF VAMPIRES</h2>
-              </div>
-              <div class="w-[100%] h-[100%] absolute hidden md:block">
-                <!-- Middle top -->
+                <div class="w-[100%] h-[100%] absolute pointer-events-none">
+                  <div
+                    class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle-small absolute border-r-[#43402E] bottom-[-8px] left-[-8px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle-small absolute border-l-[#43402E] top-[-8px] right-[-8px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                  ></div>
+                </div>
                 <div
-                  class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
-                ></div>
-                <div
-                  class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
-                ></div>
-                <div
-                  class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
-                ></div>
-                <!-- Top right -->
-                <div
-                  class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <!-- Top left -->
-                <div
-                  class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                ></div>
-                <div
-                  class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
-                ></div>
-                <div
-                  class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                ></div>
-              </div>
-              <div
-                class="w-[calc(100%-6px)] h-[calc(100%-89px)] absolute border-solid border-[#43402E] border-[2px] top-[86px] flex items-center"
-              ></div>
-              <div
-                class="flex flex-col md:flex-row justify-start md:justify-between items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] md:space-x-5"
-              >
-                <div
-                  class="w-full mt-[40px] flex flex-col items-center grow order-last lg:order-first mb-[40px] lg:mb[0px] space-y-[10px]"
+                  class="dark-gradient h-[40px] flex items-center justify-center border-solid border-[#43402E] border-[2px]"
                 >
-                  <div class="w-full flex gap-[3px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                  <img
+                    src="images/eternl.svg"
+                    class="mr-[8px]"
+                    width="24px"
+                    alt=""
+                  />
+                  <h2 class="text-[#928B64]">2345 ... hjghj</h2>
+                </div>
+                <div class="lg:hidden">
+                  <div
+                    class="bg-black h-[40px] flex items-center justify-center"
+                  >
+                    <h2
+                      x-on:click="state = 0; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                      x-bind:class="state == 0 ? 'text-white' : 'text-[#928B64]'"
+                      class="text-[#928B64]"
                     >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <h2 class="text-[#928B64]">1</h2>
-                      </div>
-                    </div>
-                    <div
-                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2
-                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
-                        >
-                          nosferal #0024
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-full flex gap-[3px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <h2 class="text-[#928B64]">1</h2>
-                      </div>
-                    </div>
-                    <div
-                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2
-                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
-                        >
-                          nosferal #0024
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-full flex gap-[3px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <h2 class="text-[#928B64]">1</h2>
-                      </div>
-                    </div>
-                    <div
-                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2
-                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
-                        >
-                          nosferal #0024
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-full flex gap-[3px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
-                      <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                      >
-                        <h2 class="text-[#928B64]">1</h2>
-                      </div>
-                    </div>
-                    <div
-                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2
-                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
-                        >
-                          nosferal #0024
-                        </h2>
-                      </div>
-                    </div>
+                      BLOOD CONTRACT
+                    </h2>
                   </div>
                   <div
-                    class="bg-[url('images/MiniButtonInactive.svg')] bg-cover w-[71px] h-[40px] flex items-center justify-center relative"
+                    class="bg-black h-[40px] flex items-center justify-center"
                   >
-                    <img
-                      x-bind:src="hamburgerActive ? 'images/HamburgerActive.png' : 'images/Hamburger.png'"
-                      alt=""
-                    />
+                    <h2
+                      x-on:click="state = 1; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                      x-bind:class="state == 1 ? 'text-white' : 'text-[#928B64]'"
+                      class="text-[#928B64]"
+                    >
+                      LEADERBOARD
+                    </h2>
                   </div>
-                  <div class="w-full flex gap-[3px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                  <div
+                    class="bg-black h-[40px] flex items-center justify-center"
+                  >
+                    <h2
+                      x-on:click="state = 2; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                      x-bind:class="state == 2 ? 'text-white' : 'text-[#928B64]'"
+                      class="text-[#928B64]"
                     >
+                      RAIDS
+                    </h2>
+                  </div>
+                </div>
+                <div class="bg-black h-[40px] flex items-center justify-center">
+                  <h2 class="text-[#928B64]">HISTORY</h2>
+                </div>
+                <div class="bg-black h-[40px] flex items-center justify-center">
+                  <h2 class="text-[#928B64]">LOG OUT</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Blood Contract -->
+          <div
+            class="w-[100%] flex flex-col items-center justify-center"
+            x-show="state == 0"
+            x-transition:enter.opacity.duration.500ms
+          >
+            <div
+              class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
+            >
+              <div class="w-full min-h-[100px]"></div>
+              <h1 class="text-[48px] my-[50px]">BLOOD CONTRACT</h1>
+              <div
+                class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
+              >
+                <div
+                  class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
+                >
+                  <h2 class="ml-[40px]">SEE YOUR STAKES</h2>
+                </div>
+                <div class="w-[100%] h-[100%] absolute hidden md:block">
+                  <!-- Middle top -->
+                  <div
+                    class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
+                  ></div>
+                  <div
+                    class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                  ></div>
+                  <!-- Top right -->
+                  <div
+                    class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <!-- Top left -->
+                  <div
+                    class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                </div>
+                <div
+                  class="w-[calc(100%-6px)] h-[calc(100%-89px)] absolute border-solid border-[#43402E] border-[2px] top-[86px] flex items-center"
+                ></div>
+                <div
+                  class="flex flex-col md:flex-row justify-start md:justify-between items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] md:space-x-5"
+                >
+                  <div
+                    class="w-full lg:max-w-[605px] mt-[40px] flex-col grow order-last lg:order-first mb-[40px] lg:mb[0px]"
+                  >
+                    <div class="flex gap-[3px] mb-[10px]">
                       <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                        class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
                       >
-                        <h2 class="text-[#928B64]">1</h2>
-                      </div>
-                    </div>
-                    <div
-                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                    >
-                      <div
-                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
-                      >
-                        <h2
-                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                        <div
+                          class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
                         >
-                          nosferal #0024
-                        </h2>
+                          <img src="images/bloodtoken_icon_01.png" alt="" />
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <!-- YOU -->
-                  <div class="w-full flex gap-[3px]">
-                    <div
-                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                    >
                       <div
-                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                      ></div>
-                      <div
-                        class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                        class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
                       >
-                        <h2>15</h2>
+                        <div
+                          class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                        >
+                          <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                            SEE YOUR STAKES:
+                          </h2>
+                          <div
+                            class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
+                          ></div>
+                          <h2 class="mr-[8px] text-white whitespace-nowrap">
+                            10 DAYS
+                          </h2>
+                        </div>
                       </div>
                     </div>
+                    <div class="flex gap-[3px] mb-[10px]">
+                      <div
+                        class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                      >
+                        <div
+                          class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                        >
+                          <img src="images/bloodtoken_icon_01.png" alt="" />
+                        </div>
+                      </div>
+                      <div
+                        class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                      >
+                        <div
+                          class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                        >
+                          <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                            SEE YOUR STAKES:
+                          </h2>
+                          <div
+                            class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
+                          ></div>
+                          <h2 class="mr-[8px] text-white whitespace-nowrap">
+                            10 DAYS
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex gap-[3px] mb-[10px]">
+                      <div
+                        class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                      >
+                        <div
+                          class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                        >
+                          <img src="images/bloodtoken_icon_01.png" alt="" />
+                        </div>
+                      </div>
+                      <div
+                        class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                      >
+                        <div
+                          class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                        >
+                          <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                            SEE YOUR STAKES:
+                          </h2>
+                          <div
+                            class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
+                          ></div>
+                          <h2 class="mr-[8px] text-white whitespace-nowrap">
+                            10 DAYS
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex gap-[3px] mb-[10px]">
+                      <div
+                        class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                      >
+                        <div
+                          class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                        >
+                          <img src="images/bloodtoken_icon_01.png" alt="" />
+                        </div>
+                      </div>
+                      <div
+                        class="max-w-[560px] grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                      >
+                        <div
+                          class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                        >
+                          <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                            SEE YOUR STAKES:
+                          </h2>
+                          <div
+                            class="border-[1px] border-dashed border-[#43402E] grow mx-[8px] mt-[12px]"
+                          ></div>
+                          <h2 class="mr-[8px] text-white whitespace-nowrap">
+                            10 DAYS
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Total -->
                     <div
-                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                      class="max-w-[605px] h-[40px] bg-[#43402E] flex justify-center items-center"
                     >
                       <div
                         class="light-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
                       >
-                        <h2 class="ml-[8px] whitespace-nowrap">YOU</h2>
+                        <h2 class="ml-[8px] text-white">TOTAL:</h2>
+                        <div
+                          class="border-[1px] border-dashed border-white grow mx-[8px] mt-[12px]"
+                        ></div>
+                        <h2 class="mr-[8px] text-white">21</h2>
                       </div>
                     </div>
+                    <!-- Button -->
+                    <div
+                      class="bg-[url('images/SmallButton.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[40px]"
+                    >
+                      <h1 class="text-[16px] text-effect">CLAIM</h1>
+                    </div>
                   </div>
+                  <img
+                    src="images/BloodtokenDemon.svg"
+                    class="mt-[20px] object-contain order-first md:order-last w-full lg:max-w-[50%]"
+                    alt=""
+                  />
+                  <!-- <div
+      class="bg-[url('images/BloodtokenDemon.png')] bg-contain bg-no-repeat w-[200px] max-w-[523px] h-[351px] grow mt-[20px]"
+    ></div> -->
                 </div>
               </div>
+              <div class="w-full min-h-[200px]"></div>
             </div>
-            <div class="w-full min-h-[200px]"></div>
           </div>
-        </div>
-        <!-- Raids -->
-        <div
-          class="w-[100%] flex flex-col items-center justify-center"
-          x-show="state == 2"
-          x-transition:enter.opacity.duration.500ms
-        >
+          <!-- Leaderboard -->
           <div
-            class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
+            class="w-[100%] flex flex-col items-center justify-center"
+            x-show="state == 1"
+            x-transition:enter.opacity.duration.500ms
           >
-            <div class="w-full min-h-[100px]"></div>
-            <h1 class="text-[48px] my-[50px]">RAIDS</h1>
             <div
-              class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
+              class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
             >
+              <div class="w-full min-h-[100px]"></div>
+              <h1 class="text-[48px] my-[50px]">LEADERBOARD</h1>
               <div
-                class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
-              >
-                <h2 class="ml-[40px]">SEE THE TOP LIST OF VAMPIRES</h2>
-              </div>
-              <div class="w-[100%] h-[100%] absolute hidden md:block z-10">
-                <!-- Middle top -->
-                <div
-                  class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
-                ></div>
-                <div
-                  class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
-                ></div>
-                <div
-                  class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
-                ></div>
-                <!-- Top right -->
-                <div
-                  class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <div
-                  class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                ></div>
-                <!-- Top left -->
-                <div
-                  class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                ></div>
-                <div
-                  class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
-                ></div>
-                <div
-                  class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                ></div>
-              </div>
-              <div
-                class="w-[calc(100%-6px)] min-h-[calc(100%-89px)] relative border-solid border-[#43402E] border-[2px] mt-[2px] mb-[3px] px-[20px] md:px-[40px] flex flex-col items-center"
+                class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
               >
                 <div
-                  class="flex flex-col lg:flex-row justify-start lg:justify-between items-center lg:items-start w-full mt-[126px] lg:space-x-5 space-y-5 lg:space-y-0"
+                  class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
                 >
-                  <div
-                    class="w-[100%] min-h-[335px] flex flex-col justify-start items-center relative border-solid border-[#43402E] border-[2px]"
-                  >
-                    <div
-                      class="w-[calc(100%-6px)] min-h-[80px] relative border-solid border-[#43402E] border-[2px] top-[3px] px-[35px] pt-[40px] pb-[35px] flex flex-col items-start"
-                    >
-                      <h2 class="mb-[15px] text-[24px] text-center">
-                        THIS RAID’S VERY LONG NAME
-                      </h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                    <div
-                      class="w-[100%] min-h-[80px] relative p-[3px] mt-[3px] flex flex-col xl:flex-row items-center space-y-[3px] xl:space-y-[0px] xl:space-x-[3px]"
-                    >
-                      <div
-                        class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
-                      >
-                        <img src="images/RaidEasy.png" alt="" />
-                        <h2 class="">EASY</h2>
-                      </div>
-                      <div
-                        class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
-                      >
-                        <div class="flex gap-[3px] mb-[10px] w-full">
-                          <div
-                            class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                          >
-                            <div
-                              class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                            >
-                              <img src="images/bloodtoken_icon_01.png" alt="" />
-                            </div>
-                          </div>
-                          <div
-                            class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                          >
-                            <div
-                              class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-between"
-                            >
-                              <h2
-                                class="ml-[8px] whitespace-nowrap text-[#928B64]"
-                              >
-                                BONUS:
-                              </h2>
-                              <h2 class="mr-[8px] text-white whitespace-nowrap">
-                                10%
-                              </h2>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
-                        >
-                          <h1 class="text-[16px] text-[#928B64]">PICK</h1>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Middle top -->
-                    <div
-                      class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
-                    ></div>
-                    <div
-                      class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
-                    ></div>
-                    <div
-                      class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
-                    ></div>
-                    <!-- Top right -->
-                    <div
-                      class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <div
-                      class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <div
-                      class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <!-- Top left -->
-                    <div
-                      class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                    <div
-                      class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                    <div
-                      class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                  </div>
-                  <div
-                    class="w-[100%] min-h-[335px] flex flex-col justify-start items-center relative border-solid border-[#43402E] border-[2px]"
-                  >
-                    <div
-                      class="w-[calc(100%-6px)] min-h-[80px] relative border-solid border-[#43402E] border-[2px] top-[3px] px-[35px] pt-[40px] pb-[35px] flex flex-col items-start"
-                    >
-                      <h2 class="mb-[15px] text-[24px] text-center">
-                        THIS RAID’S VERY LONG NAME
-                      </h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                    <div
-                      class="w-[100%] min-h-[80px] relative p-[3px] mt-[3px] flex flex-col xl:flex-row items-center space-y-[3px] xl:space-y-[0px] xl:space-x-[3px]"
-                    >
-                      <div
-                        class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
-                      >
-                        <img src="images/RaidEasy.png" alt="" />
-                        <h2 class="">EASY</h2>
-                      </div>
-                      <div
-                        class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
-                      >
-                        <div class="flex gap-[3px] mb-[10px] w-full">
-                          <div
-                            class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                          >
-                            <div
-                              class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                            >
-                              <img src="images/bloodtoken_icon_01.png" alt="" />
-                            </div>
-                          </div>
-                          <div
-                            class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                          >
-                            <div
-                              class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-between"
-                            >
-                              <h2
-                                class="ml-[8px] whitespace-nowrap text-[#928B64]"
-                              >
-                                BONUS:
-                              </h2>
-                              <h2 class="mr-[8px] text-white whitespace-nowrap">
-                                10%
-                              </h2>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
-                        >
-                          <h1 class="text-[16px] text-[#928B64]">PICK</h1>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Middle top -->
-                    <div
-                      class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
-                    ></div>
-                    <div
-                      class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
-                    ></div>
-                    <div
-                      class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
-                    ></div>
-                    <!-- Top right -->
-                    <div
-                      class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <div
-                      class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <div
-                      class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <!-- Top left -->
-                    <div
-                      class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                    <div
-                      class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                    <div
-                      class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                  </div>
-                  <div
-                    class="w-[100%] min-h-[335px] flex flex-col justify-start items-center relative border-solid border-[#43402E] border-[2px]"
-                  >
-                    <div
-                      class="w-[calc(100%-6px)] min-h-[80px] relative border-solid border-[#43402E] border-[2px] top-[3px] px-[35px] pt-[40px] pb-[35px] flex flex-col items-start"
-                    >
-                      <h2 class="mb-[15px] text-[24px] text-center">
-                        THIS RAID’S VERY LONG NAME
-                      </h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                    <div
-                      class="w-[100%] min-h-[80px] relative p-[3px] mt-[3px] flex flex-col xl:flex-row items-center space-y-[3px] xl:space-y-[0px] xl:space-x-[3px]"
-                    >
-                      <div
-                        class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
-                      >
-                        <img src="images/RaidEasy.png" alt="" />
-                        <h2 class="">EASY</h2>
-                      </div>
-                      <div
-                        class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
-                      >
-                        <div class="flex gap-[3px] mb-[10px] w-full">
-                          <div
-                            class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
-                          >
-                            <div
-                              class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
-                            ></div>
-                            <div
-                              class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
-                            >
-                              <img src="images/bloodtoken_icon_01.png" alt="" />
-                            </div>
-                          </div>
-                          <div
-                            class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
-                          >
-                            <div
-                              class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-between"
-                            >
-                              <h2
-                                class="ml-[8px] whitespace-nowrap text-[#928B64]"
-                              >
-                                BONUS:
-                              </h2>
-                              <h2 class="mr-[8px] text-white whitespace-nowrap">
-                                10%
-                              </h2>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
-                        >
-                          <h1 class="text-[16px] text-[#928B64]">PICK</h1>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Middle top -->
-                    <div
-                      class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
-                    ></div>
-                    <div
-                      class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
-                    ></div>
-                    <div
-                      class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
-                    ></div>
-                    <!-- Top right -->
-                    <div
-                      class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <div
-                      class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <div
-                      class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
-                    ></div>
-                    <!-- Top left -->
-                    <div
-                      class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                    <div
-                      class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                    <div
-                      class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
-                    ></div>
-                  </div>
+                  <h2 class="ml-[40px]">SEE THE TOP LIST OF VAMPIRES</h2>
                 </div>
-                <!-- Total -->
                 <div
-                  class="w-full min-h-[40px] bg-[#43402E] flex flex-col justify-center items-center mt-[20px] mb-[40px] p-[2px]"
+                  class="w-[100%] h-[100%] absolute hidden md:block pointer-events-none"
+                >
+                  <!-- Middle top -->
+                  <div
+                    class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
+                  ></div>
+                  <div
+                    class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                  ></div>
+                  <!-- Top right -->
+                  <div
+                    class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <!-- Top left -->
+                  <div
+                    class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                </div>
+                <div
+                  class="w-[calc(100%-6px)] h-[calc(100%-89px)] absolute border-solid border-[#43402E] border-[2px] top-[86px] flex items-center pointer-events-none"
+                ></div>
+                <div
+                  class="flex flex-col justify-start items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] md:space-x-5"
                 >
                   <div
-                    class="light-gradient w-full grow border-solid border-black border-[3px] flex items-center justify-between"
+                    class="w-full h-[415px] overflow-y-auto mt-[40px] flex flex-col items-center grow mb-[40px] lg:mb[0px] space-y-[10px]"
                   >
-                    <h2 class="ml-[8px] text-white">
-                      NEXT ROUND: 3 DAYS 17 HOURS 12 MINUTES
-                    </h2>
-                    <div class="flex items-center justify-center">
-                      <img
-                        src="images/bloodtoken_icon_01.png"
-                        class="mr-[8px]"
-                        alt=""
-                      />
-                      <h2 class="mr-[8px] text-white">REWARDS: 15%</h2>
+                    <template x-for="i in leaderboardCount(expanded)">
+                      <div class="w-full flex">
+                        <div
+                          class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                        >
+                          <div
+                            class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            x-bind:class="$store.leaderboard[i-1] == $store.userName ? 'light-gradient': 'dark-gradient'"
+                            class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                          >
+                            <h2
+                              x-bind:class="$store.leaderboard[i-1] == $store.userName ? 'text-white': 'text-[#928B64] '"
+                              class="text-[#928B64]"
+                              x-text="i"
+                            >
+                              1
+                            </h2>
+                          </div>
+                        </div>
+                        <div
+                          class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                        >
+                          <div
+                            x-bind:class="$store.leaderboard[i-1] == $store.userName ? 'light-gradient': 'dark-gradient'"
+                            class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                          >
+                            <h2
+                              x-bind:class="$store.leaderboard[i-1] == $store.userName ? 'text-white': 'text-[#928B64] '"
+                              class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                              x-text="$store.leaderboard[i-1]"
+                            >
+                              nosferal #0024
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
+                    </template>
+                    <div
+                      class="w-full flex flex-col items-center space-y-[10px]"
+                      x-show="expanded == false && playerInTop() == false"
+                    >
+                      <div
+                        x-on:click="expanded = true"
+                        class="bg-[url('images/MiniButtonInactive.svg')] bg-cover w-[71px] min-h-[40px] flex items-center justify-center relative hover:cursor-pointer"
+                      >
+                        <img src="images/Dots.png" alt="" />
+                      </div>
+                      <div class="w-full flex gap-[3px]">
+                        <div
+                          class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                        >
+                          <div
+                            class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                          >
+                            <h2
+                              x-text="$store.leaderboard.indexOf($store.userName)"
+                              class="text-[#928B64]"
+                            >
+                              1
+                            </h2>
+                          </div>
+                        </div>
+                        <div
+                          class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                        >
+                          <div
+                            class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                          >
+                            <h2
+                              x-text="$store.leaderboard[$store.leaderboard.indexOf($store.userName) -1]"
+                              class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                            >
+                              nosferal #0024
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- YOU -->
+                      <div class="w-full flex gap-[3px]">
+                        <div
+                          class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                        >
+                          <div
+                            class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                          >
+                            <h2
+                              x-text="$store.leaderboard.indexOf($store.userName)+1"
+                            >
+                              15
+                            </h2>
+                          </div>
+                        </div>
+                        <div
+                          class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                        >
+                          <div
+                            class="light-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                          >
+                            <h2
+                              x-text="$store.leaderboard[$store.leaderboard.indexOf($store.userName)]"
+                              class="ml-[8px] whitespace-nowrap"
+                            >
+                              YOU
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="w-full min-h-[200px]"></div>
             </div>
-            <div class="w-full min-h-[200px]"></div>
+          </div>
+          <!-- Raids -->
+          <div
+            class="w-[100%] flex flex-col items-center justify-center"
+            x-show="state == 2"
+            x-transition:enter.opacity.duration.500ms
+          >
+            <div
+              class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
+            >
+              <div class="w-full min-h-[100px]"></div>
+              <h1 class="text-[48px] my-[50px]">RAIDS</h1>
+              <div
+                class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
+              >
+                <div
+                  class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
+                >
+                  <h2 class="ml-[40px]">SEE THE TOP LIST OF VAMPIRES</h2>
+                </div>
+                <div class="w-[100%] h-[100%] absolute hidden md:block z-10">
+                  <!-- Middle top -->
+                  <div
+                    class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
+                  ></div>
+                  <div
+                    class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                  ></div>
+                  <!-- Top right -->
+                  <div
+                    class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <!-- Top left -->
+                  <div
+                    class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                </div>
+                <div
+                  class="w-[calc(100%-6px)] min-h-[calc(100%-89px)] relative border-solid border-[#43402E] border-[2px] mt-[2px] mb-[3px] px-[20px] md:px-[40px] flex flex-col items-center"
+                >
+                  <div
+                    class="flex flex-col lg:flex-row justify-start lg:justify-between items-center lg:items-start w-full mt-[126px] lg:space-x-5 space-y-5 lg:space-y-0"
+                  >
+                    <div
+                      class="w-[100%] min-h-[335px] flex flex-col justify-start items-center relative border-solid border-[#43402E] border-[2px]"
+                    >
+                      <div
+                        class="w-[calc(100%-6px)] min-h-[80px] relative border-solid border-[#43402E] border-[2px] top-[3px] px-[35px] pt-[40px] pb-[35px] flex flex-col items-start"
+                      >
+                        <h2 class="mb-[15px] text-[24px] text-center">
+                          THIS RAID’S VERY LONG NAME
+                        </h2>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                      <div
+                        class="w-[100%] min-h-[80px] relative p-[3px] mt-[3px] flex flex-col xl:flex-row items-center space-y-[3px] xl:space-y-[0px] xl:space-x-[3px]"
+                      >
+                        <div
+                          class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
+                        >
+                          <img src="images/RaidEasy.png" alt="" />
+                          <h2 class="">EASY</h2>
+                        </div>
+                        <div
+                          class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
+                        >
+                          <div class="flex gap-[3px] mb-[10px] w-full">
+                            <div
+                              class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                            >
+                              <div
+                                class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                              >
+                                <img
+                                  src="images/bloodtoken_icon_01.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                            >
+                              <div
+                                class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-between"
+                              >
+                                <h2
+                                  class="ml-[8px] whitespace-nowrap text-[#928B64]"
+                                >
+                                  BONUS:
+                                </h2>
+                                <h2
+                                  class="mr-[8px] text-white whitespace-nowrap"
+                                >
+                                  10%
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
+                          >
+                            <h1 class="text-[16px] text-[#928B64]">PICK</h1>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Middle top -->
+                      <div
+                        class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
+                      ></div>
+                      <div
+                        class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
+                      ></div>
+                      <div
+                        class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                      ></div>
+                      <!-- Top right -->
+                      <div
+                        class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <div
+                        class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <div
+                        class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <!-- Top left -->
+                      <div
+                        class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[100%] min-h-[335px] flex flex-col justify-start items-center relative border-solid border-[#43402E] border-[2px]"
+                    >
+                      <div
+                        class="w-[calc(100%-6px)] min-h-[80px] relative border-solid border-[#43402E] border-[2px] top-[3px] px-[35px] pt-[40px] pb-[35px] flex flex-col items-start"
+                      >
+                        <h2 class="mb-[15px] text-[24px] text-center">
+                          THIS RAID’S VERY LONG NAME
+                        </h2>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                      <div
+                        class="w-[100%] min-h-[80px] relative p-[3px] mt-[3px] flex flex-col xl:flex-row items-center space-y-[3px] xl:space-y-[0px] xl:space-x-[3px]"
+                      >
+                        <div
+                          class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
+                        >
+                          <img src="images/RaidEasy.png" alt="" />
+                          <h2 class="">EASY</h2>
+                        </div>
+                        <div
+                          class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
+                        >
+                          <div class="flex gap-[3px] mb-[10px] w-full">
+                            <div
+                              class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                            >
+                              <div
+                                class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                              >
+                                <img
+                                  src="images/bloodtoken_icon_01.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                            >
+                              <div
+                                class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-between"
+                              >
+                                <h2
+                                  class="ml-[8px] whitespace-nowrap text-[#928B64]"
+                                >
+                                  BONUS:
+                                </h2>
+                                <h2
+                                  class="mr-[8px] text-white whitespace-nowrap"
+                                >
+                                  10%
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
+                          >
+                            <h1 class="text-[16px] text-[#928B64]">PICK</h1>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Middle top -->
+                      <div
+                        class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
+                      ></div>
+                      <div
+                        class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
+                      ></div>
+                      <div
+                        class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                      ></div>
+                      <!-- Top right -->
+                      <div
+                        class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <div
+                        class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <div
+                        class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <!-- Top left -->
+                      <div
+                        class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[100%] min-h-[335px] flex flex-col justify-start items-center relative border-solid border-[#43402E] border-[2px]"
+                    >
+                      <div
+                        class="w-[calc(100%-6px)] min-h-[80px] relative border-solid border-[#43402E] border-[2px] top-[3px] px-[35px] pt-[40px] pb-[35px] flex flex-col items-start"
+                      >
+                        <h2 class="mb-[15px] text-[24px] text-center">
+                          THIS RAID’S VERY LONG NAME
+                        </h2>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                      <div
+                        class="w-[100%] min-h-[80px] relative p-[3px] mt-[3px] flex flex-col xl:flex-row items-center space-y-[3px] xl:space-y-[0px] xl:space-x-[3px]"
+                      >
+                        <div
+                          class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
+                        >
+                          <img src="images/RaidEasy.png" alt="" />
+                          <h2 class="">EASY</h2>
+                        </div>
+                        <div
+                          class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
+                        >
+                          <div class="flex gap-[3px] mb-[10px] w-full">
+                            <div
+                              class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                            >
+                              <div
+                                class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                              ></div>
+                              <div
+                                class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                              >
+                                <img
+                                  src="images/bloodtoken_icon_01.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                            >
+                              <div
+                                class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-between"
+                              >
+                                <h2
+                                  class="ml-[8px] whitespace-nowrap text-[#928B64]"
+                                >
+                                  BONUS:
+                                </h2>
+                                <h2
+                                  class="mr-[8px] text-white whitespace-nowrap"
+                                >
+                                  10%
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
+                          >
+                            <h1 class="text-[16px] text-[#928B64]">PICK</h1>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Middle top -->
+                      <div
+                        class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
+                      ></div>
+                      <div
+                        class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
+                      ></div>
+                      <div
+                        class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                      ></div>
+                      <!-- Top right -->
+                      <div
+                        class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <div
+                        class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <div
+                        class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                      ></div>
+                      <!-- Top left -->
+                      <div
+                        class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- Total -->
+                  <div
+                    class="w-full min-h-[40px] bg-[#43402E] flex flex-col justify-center items-center mt-[20px] mb-[40px] p-[2px]"
+                  >
+                    <div
+                      class="light-gradient w-full grow border-solid border-black border-[3px] flex items-center justify-between"
+                    >
+                      <h2 class="ml-[8px] text-white">
+                        NEXT ROUND: 3 DAYS 17 HOURS 12 MINUTES
+                      </h2>
+                      <div class="flex items-center justify-center">
+                        <img
+                          src="images/bloodtoken_icon_01.png"
+                          class="mr-[8px]"
+                          alt=""
+                        />
+                        <h2 class="mr-[8px] text-white">REWARDS: 15%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full min-h-[200px]"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="w-full h-[100px] relative flex justify-between items-center px-[15px] md:px-[80px]"
-      >
-        <img src="images/BajuzkiLogo.svg" alt="" />
-        <h1 class="text-[6px] md:text-[12px]">
-          VAMPIRE INVASION BY BAJUZKI 2022 • ALL RIGHTS RESERVED
-        </h1>
-        <div class="flex gap-3">
-          <a href="" class="w-[24px]">
-            <img src="images/Twitter.png" alt="" />
-          </a>
-          <a href="" class="w-[24px]"
-            ><img src="images/Discord.png" alt=""
-          /></a>
+        <div
+          class="w-full h-[100px] relative flex justify-between items-center px-[15px] md:px-[80px]"
+        >
+          <img src="images/BajuzkiLogo.svg" alt="" />
+          <h1 class="text-[6px] md:text-[12px]">
+            VAMPIRE INVASION BY BAJUZKI 2022 • ALL RIGHTS RESERVED
+          </h1>
+          <div class="flex gap-3">
+            <a href="" class="w-[24px]">
+              <img src="images/Twitter.png" alt="" />
+            </a>
+            <a href="" class="w-[24px]"
+              ><img src="images/Discord.png" alt=""
+            /></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
+  <script>
+    document.addEventListener("alpine:init", () => {
+      leaderboard = [
+        "THE NAME #0001",
+        "THE NAME #0002",
+        "THE NAME #0003",
+        "THE NAME #0004",
+        "THE NAME #0005",
+        "THE NAME #0006",
+        "THE NAME #0007",
+        "THE NAME #0008",
+        "THE NAME #0009",
+        "THE NAME #0010",
+        "THE NAME #0011",
+        "THE NAME #0012",
+        "THE NAME #0013",
+        "THE NAME #0014",
+        "THE NAME #0015",
+        "THE NAME #0016",
+        "THE NAME #0017",
+        "THE NAME #0018",
+        "THE NAME #0019",
+        "THE NAME #0020",
+      ];
+      Alpine.store("leaderboard", leaderboard);
+      Alpine.store("userName", "THE NAME #0009");
+    });
+    function leaderboardCount(expanded) {
+      if (playerInTop() || expanded) {
+        return Alpine.store("leaderboard").length;
+      } else {
+        return 5;
+      }
+    }
+    function playerInTop() {
+      if (Alpine.store("leaderboard").indexOf(Alpine.store("userName")) < 8) {
+        console.log("IN TOP 5");
+        return true;
+      } else {
+        console.log("NO TOP 5");
+        return false;
+      }
+    }
+  </script>
+</html>
