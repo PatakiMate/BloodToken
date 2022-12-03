@@ -178,14 +178,14 @@
                   />
                   <h2 class="text-[#928B64]">2345 ... hjghj</h2>
                 </div>
-                <div class="lg:hidden">
+                <div class="xl:hidden">
                   <div
                     class="bg-black h-[40px] flex items-center justify-center"
                   >
                     <h2
                       x-on:click="state = 0; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
                       x-bind:class="state == 0 ? 'text-white' : 'text-[#928B64]'"
-                      class="text-[#928B64]"
+                      class="text-[#928B64] hover:cursor-pointer"
                     >
                       BLOOD CONTRACT
                     </h2>
@@ -196,7 +196,7 @@
                     <h2
                       x-on:click="state = 1; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
                       x-bind:class="state == 1 ? 'text-white' : 'text-[#928B64]'"
-                      class="text-[#928B64]"
+                      class="text-[#928B64] hover:cursor-pointer"
                     >
                       LEADERBOARD
                     </h2>
@@ -207,17 +207,23 @@
                     <h2
                       x-on:click="state = 2; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
                       x-bind:class="state == 2 ? 'text-white' : 'text-[#928B64]'"
-                      class="text-[#928B64]"
+                      class="text-[#928B64] hover:cursor-pointer"
                     >
                       RAIDS
                     </h2>
                   </div>
                 </div>
                 <div class="bg-black h-[40px] flex items-center justify-center">
-                  <h2 class="text-[#928B64]">HISTORY</h2>
+                  <h2
+                    x-on:click="state = 4; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                    x-bind:class="state == 4 ? 'text-white' : 'text-[#928B64]'"
+                    class="text-[#928B64] hover:cursor-pointer"
+                  >
+                    HISTORY
+                  </h2>
                 </div>
                 <div class="bg-black h-[40px] flex items-center justify-center">
-                  <h2 class="text-[#928B64]">LOG OUT</h2>
+                  <h2 class="text-[#928B64] hover:cursor-pointer">LOG OUT</h2>
                 </div>
               </div>
             </div>
@@ -570,7 +576,7 @@
                           </div>
                         </div>
                         <div
-                          class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                          class="grow h-[40px] bg-[#43402E] flex justify-center items-center ml-[3px]"
                         >
                           <div
                             x-bind:class="$store.leaderboard[i-1] == $store.userName ? 'light-gradient': 'dark-gradient'"
@@ -705,7 +711,7 @@
                 <div
                   class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
                 >
-                  <h2 class="ml-[40px]">SEE THE TOP LIST OF VAMPIRES</h2>
+                  <h2 class="ml-[40px]">THESE ARE YOUR CRAZY AS FUCK RAIDS</h2>
                 </div>
                 <div class="w-[100%] h-[100%] absolute hidden md:block z-10">
                   <!-- Middle top -->
@@ -1092,6 +1098,130 @@
                         <h2 class="mr-[8px] text-white">REWARDS: 15%</h2>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full min-h-[200px]"></div>
+            </div>
+          </div>
+          <!-- History -->
+          <div
+            class="w-[100%] flex flex-col items-center justify-center"
+            x-show="state == 4"
+            x-transition:enter.opacity.duration.500ms
+          >
+            <div
+              class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
+            >
+              <div class="w-full min-h-[100px]"></div>
+              <h1 class="text-[48px] my-[50px]">HISTORY</h1>
+              <div
+                class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
+              >
+                <div
+                  class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
+                >
+                  <h2 class="ml-[40px]">PAYOUTS HISTORY</h2>
+                </div>
+                <div
+                  class="w-[100%] h-[100%] absolute hidden md:block pointer-events-none"
+                >
+                  <!-- Middle top -->
+                  <div
+                    class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
+                  ></div>
+                  <div
+                    class="triangle-black absolute border-t-black top-[2px] left-[calc(50%-13px)]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                  ></div>
+                  <!-- Top right -->
+                  <div
+                    class="triangle-big-edge absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-l-black top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <div
+                    class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                  ></div>
+                  <!-- Top left -->
+                  <div
+                    class="triangle-big-edge absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle-black-edge absolute border-r-black top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                  <div
+                    class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                  ></div>
+                </div>
+                <div
+                  class="w-[calc(100%-6px)] h-[calc(100%-89px)] absolute border-solid border-[#43402E] border-[2px] top-[86px] flex items-center pointer-events-none"
+                ></div>
+                <div
+                  class="flex flex-col justify-start items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] md:space-x-5"
+                >
+                  <div
+                    class="w-full h-[415px] overflow-y-auto mt-[40px] flex flex-col items-center grow mb-[40px] lg:mb[0px] space-y-[10px]"
+                  >
+                    <template x-for="i in 10">
+                      <div class="w-full flex">
+                        <div
+                          class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                        >
+                          <div
+                            class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                          ></div>
+                          <div
+                            class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                          >
+                            <h2 class="text-[#928B64]" x-text="i">1</h2>
+                          </div>
+                        </div>
+                        <div
+                          class="grow min-h-[40px] bg-[#43402E] p-[2px] ml-[3px] flex justify-center items-center"
+                        >
+                          <div
+                            class="dark-gradient w-full h-full border-solid border-black border-[3px] flex flex-col lg:flex-row items-center justify-start lg:justify-between"
+                          >
+                            <h2
+                              class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                            >
+                              04 october 2022
+                            </h2>
+                            <div class="flex items-center justify-center">
+                              <img src="images/Bloodtoken.png" alt="" />
+                              <h2 class="ml-[4px] whitespace-nowrap uppercase">
+                                12 345 670
+                              </h2>
+                            </div>
+                            <h2 class="whitespace-nowrap">
+                              asdfgh•••••••••5678
+                            </h2>
+                            <h2 class="whitespace-nowrap">
+                              TX: azuhsdvk657....
+                            </h2>
+                            <div class="flex items-center justify-center">
+                              <h2 class="mr-[4px] whitespace-nowrap uppercase">
+                                Sent
+                              </h2>
+                              <img src="images/Sent.png" alt="" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </template>
                   </div>
                 </div>
               </div>
