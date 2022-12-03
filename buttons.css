@@ -1,0 +1,132 @@
+/* bevel size, left offset and color settings next 3 lines */
+.bvc {
+  left: -20px;
+}
+.bevel,
+.content {
+  border-width: 20px;
+}
+.bevel,
+.content {
+  border-color: #efefef;
+  border-style: solid;
+}
+.triangle-small {
+  content: "";
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.triangle-small-black {
+  content: "";
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.triangle {
+  content: "";
+  height: 22px;
+  width: 22px;
+  display: inline-block;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+}
+.triangle-black {
+  content: "";
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+}
+.triangle-black-edge {
+  content: "";
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  border-top: 12.5px solid transparent;
+  border-bottom: 12.5px solid transparent;
+  border-left: 12.5px solid transparent;
+  border-right: 12.5px solid transparent;
+}
+.triangle-big {
+  content: "";
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+.triangle-big-edge {
+  content: "";
+  height: 28px;
+  width: 28px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+}
+.text-effect {
+  text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.5);
+}
+.triangle-right {
+  content: "";
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-right: 20px solid red;
+}
+.triangle-left {
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  content: "";
+  display: inline-block;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid red;
+  border-right: 20px solid transparent;
+}
+.cutout {
+  height: 40px;
+  width: 315px;
+  background: linear-gradient(45deg, transparent 13px, white 0) bottom left,
+    linear-gradient(135deg, transparent 13px, white 0) top left,
+    linear-gradient(-135deg, transparent 13px, white 0) top right,
+    linear-gradient(-45deg, transparent 13px, white 0) bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  border: solid red;
+}
+.dark-gradient {
+  background: radial-gradient(
+    43.14% 56.94% at 52.73% 50%,
+    #000000 0%,
+    #240601 100%
+  );
+}
+.light-gradient {
+  background: radial-gradient(
+    37.88% 50% at 37.88% 50%,
+    #d13e0f 0%,
+    #791503 100%
+  );
+}
