@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="buttons.css" />
   </head>
 </html>
-<body class="bg-black" x-data="">
+<body class="bg-black" x-data="{hamburgerActive: false, state: 1}">
   <div class="w-full min-h-screen bg-[url('images/Background.png')] bg-cover">
     <div class="w-full min-h-screen bg-black bg-opacity-80 bg-cover">
       <!-- Log In -->
@@ -65,30 +65,64 @@
           </div>
         </div>
       </div>
-      <div class="w-full">
+      <!-- Main -->
+      <div class="w-full" x-show="true">
         <!-- Header -->
         <div
-          class="w-full h-[100px] fixed top-0 justify-between items-center flex px-[15px] md:px-[80px] z-10"
+          class="w-full h-[100px] fixed top-0 justify-between items-center flex px-[15px] md:px-[80px] z-50"
         >
           <div class="flex justify-start items-center">
             <img src="images/VampireLogo.svg" class="w-[69px]" alt="" />
             <div class="justify-start items-center hidden xl:flex">
               <div
-                class="bg-[url('images/SmallButton.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center ml-[48px]"
+                x-on:click="state = 0; window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center ml-[48px] relative hover:cursor-pointer"
               >
-                <h1 class="text-[16px] text-effect">BLOOD CONTRACT</h1>
+                <div
+                  x-show="state == 0"
+                  x-transition
+                  class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
+                ></div>
+                <h1
+                  x-bind:class="state == 0 ? 'text-white' : 'text-[#928B64]'"
+                  class="text-[16px] absolute select-none"
+                >
+                  BLOOD CONTRACT
+                </h1>
               </div>
               <div class="h-[2px] min-w-[40px] bg-[#43402E] mx-[8px]"></div>
               <div
-                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center"
+                x-on:click="state = 1; window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center relative hover:cursor-pointer"
               >
-                <h1 class="text-[16px] text-[#928B64]">LEADERBOARD</h1>
+                <div
+                  x-show="state == 1"
+                  x-transition
+                  class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
+                ></div>
+                <h1
+                  x-bind:class="state == 1 ? 'text-white' : 'text-[#928B64]'"
+                  class="text-[16px] absolute select-none"
+                >
+                  LEADERBOARD
+                </h1>
               </div>
               <div class="h-[2px] min-w-[40px] bg-[#43402E] mx-[8px]"></div>
               <div
-                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center"
+                x-on:click="state = 2; window.scrollTo({top: 0, behavior: 'smooth'});"
+                class="bg-[url('images/SmallButtonInactive.svg')] bg-cover min-w-[171px] h-[40px] flex items-center justify-center relative hover:cursor-pointer"
               >
-                <h1 class="text-[16px] text-[#928B64]">RAIDS</h1>
+                <div
+                  x-show="state == 2"
+                  x-transition
+                  class="bg-[url('images/SmallButton.svg')] bg-cover w-full h-full absolute"
+                ></div>
+                <h1
+                  x-bind:class="state == 2 ? 'text-white' : 'text-[#928B64]'"
+                  class="text-[16px] absolute select-none"
+                >
+                  RAIDS
+                </h1>
               </div>
             </div>
           </div>
@@ -99,16 +133,89 @@
               alt=""
             />
             <div
-              class="bg-[url('images/MiniButtonInactive.svg')] bg-cover min-w-[71px] h-[40px] flex items-center justify-center"
+              x-on:click="hamburgerActive = !hamburgerActive"
+              x-bind:class="hamburgerActive ? `bg-[url('images/MiniButton.svg')]` : `bg-[url('images/MiniButtonInactive.svg')]` "
+              class="bg-[url('images/MiniButtonInactive.svg')] bg-cover min-w-[71px] h-[40px] flex items-center justify-center relative"
             >
-              <img src="images/Hamburger.png" alt="" />
+              <img
+                x-bind:src="hamburgerActive ? 'images/HamburgerActive.png' : 'images/Hamburger.png'"
+                alt=""
+              />
+            </div>
+            <div
+              x-show="hamburgerActive"
+              x-transition
+              x-on:click.outside="hamburgerActive = false"
+              class="w-[171px] absolute bg-black top-[80px] right-[20px] md:right-[80px] border-solid border-[#43402E] border-[2px]"
+            >
+              <div class="w-[100%] h-[100%] absolute pointer-events-none">
+                <div
+                  class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                ></div>
+                <div
+                  class="triangle-small absolute border-r-[#43402E] bottom-[-8px] left-[-8px] rotate-[-45deg]"
+                ></div>
+                <div
+                  class="triangle-small absolute border-l-[#43402E] top-[-8px] right-[-8px] rotate-[-45deg]"
+                ></div>
+                <div
+                  class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                ></div>
+              </div>
+              <div
+                class="dark-gradient h-[40px] flex items-center justify-center border-solid border-[#43402E] border-[2px]"
+              >
+                <img
+                  src="images/eternl.svg"
+                  class="mr-[8px]"
+                  width="24px"
+                  alt=""
+                />
+                <h2 class="text-[#928B64]">2345 ... hjghj</h2>
+              </div>
+              <div class="lg:hidden">
+                <div class="bg-black h-[40px] flex items-center justify-center">
+                  <h2
+                    x-on:click="state = 0; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                    x-bind:class="state == 0 ? 'text-white' : 'text-[#928B64]'"
+                    class="text-[#928B64]"
+                  >
+                    BLOOD CONTRACT
+                  </h2>
+                </div>
+                <div class="bg-black h-[40px] flex items-center justify-center">
+                  <h2
+                    x-on:click="state = 1; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                    x-bind:class="state == 1 ? 'text-white' : 'text-[#928B64]'"
+                    class="text-[#928B64]"
+                  >
+                    LEADERBOARD
+                  </h2>
+                </div>
+                <div class="bg-black h-[40px] flex items-center justify-center">
+                  <h2
+                    x-on:click="state = 2; window.scrollTo({top: 0, behavior: 'smooth'}); hamburgerActive = false"
+                    x-bind:class="state == 2 ? 'text-white' : 'text-[#928B64]'"
+                    class="text-[#928B64]"
+                  >
+                    RAIDS
+                  </h2>
+                </div>
+              </div>
+              <div class="bg-black h-[40px] flex items-center justify-center">
+                <h2 class="text-[#928B64]">HISTORY</h2>
+              </div>
+              <div class="bg-black h-[40px] flex items-center justify-center">
+                <h2 class="text-[#928B64]">LOG OUT</h2>
+              </div>
             </div>
           </div>
         </div>
         <!-- Blood Contract -->
         <div
           class="w-[100%] flex flex-col items-center justify-center"
-          x-show="false"
+          x-show="state == 0"
+          x-transition:enter.opacity.duration.500ms
         >
           <div
             class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
@@ -362,7 +469,8 @@
         <!-- Leaderboard -->
         <div
           class="w-[100%] flex flex-col items-center justify-center"
-          x-show="true"
+          x-show="state == 1"
+          x-transition:enter.opacity.duration.500ms
         >
           <div
             class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
@@ -416,9 +524,9 @@
                 class="flex flex-col md:flex-row justify-start md:justify-between items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] md:space-x-5"
               >
                 <div
-                  class="w-full mt-[40px] flex-col grow order-last lg:order-first mb-[40px] lg:mb[0px]"
+                  class="w-full mt-[40px] flex flex-col items-center grow order-last lg:order-first mb-[40px] lg:mb[0px] space-y-[10px]"
                 >
-                  <div class="flex gap-[3px] mb-[10px]">
+                  <div class="w-full flex gap-[3px]">
                     <div
                       class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
                     >
@@ -446,13 +554,15 @@
                       <div
                         class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
                       >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                        <h2
+                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                        >
                           nosferal #0024
                         </h2>
                       </div>
                     </div>
                   </div>
-                  <div class="flex gap-[3px] mb-[10px]">
+                  <div class="w-full flex gap-[3px]">
                     <div
                       class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
                     >
@@ -480,13 +590,15 @@
                       <div
                         class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
                       >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                        <h2
+                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                        >
                           nosferal #0024
                         </h2>
                       </div>
                     </div>
                   </div>
-                  <div class="flex gap-[3px] mb-[10px]">
+                  <div class="w-full flex gap-[3px]">
                     <div
                       class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
                     >
@@ -514,13 +626,15 @@
                       <div
                         class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
                       >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                        <h2
+                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                        >
                           nosferal #0024
                         </h2>
                       </div>
                     </div>
                   </div>
-                  <div class="flex gap-[3px] mb-[10px]">
+                  <div class="w-full flex gap-[3px]">
                     <div
                       class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
                     >
@@ -548,38 +662,92 @@
                       <div
                         class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
                       >
-                        <h2 class="ml-[8px] whitespace-nowrap text-[#928B64]">
+                        <h2
+                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                        >
                           nosferal #0024
                         </h2>
                       </div>
                     </div>
                   </div>
-
-                  <!-- Total -->
                   <div
-                    class="max-w-[605px] h-[40px] bg-[#43402E] flex justify-center items-center"
+                    class="bg-[url('images/MiniButtonInactive.svg')] bg-cover w-[71px] h-[40px] flex items-center justify-center relative"
                   >
+                    <img
+                      x-bind:src="hamburgerActive ? 'images/HamburgerActive.png' : 'images/Hamburger.png'"
+                      alt=""
+                    />
+                  </div>
+                  <div class="w-full flex gap-[3px]">
                     <div
-                      class="light-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
                     >
-                      <h2 class="ml-[8px] text-white">TOTAL:</h2>
                       <div
-                        class="border-[1px] border-dashed border-white grow mx-[8px] mt-[12px]"
+                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
                       ></div>
-                      <h2 class="mr-[8px] text-white">21</h2>
+                      <div
+                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                      ></div>
+                      <div
+                        class="dark-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                      >
+                        <h2 class="text-[#928B64]">1</h2>
+                      </div>
+                    </div>
+                    <div
+                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                    >
+                      <div
+                        class="dark-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                      >
+                        <h2
+                          class="ml-[8px] whitespace-nowrap text-[#928B64] uppercase"
+                        >
+                          nosferal #0024
+                        </h2>
+                      </div>
                     </div>
                   </div>
-                  <!-- Button -->
-                  <div
-                    class="bg-[url('images/SmallButton.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[40px]"
-                  >
-                    <h1 class="text-[16px] text-effect">CLAIM</h1>
+                  <!-- YOU -->
+                  <div class="w-full flex gap-[3px]">
+                    <div
+                      class="w-[40px] h-[40px] bg-[#43402E] flex justify-center items-center relative"
+                    >
+                      <div
+                        class="triangle-small-black absolute border-r-black top-[-8px] left-[-8px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-small-black absolute border-l-black bottom-[-8px] right-[-8px] rotate-45"
+                      ></div>
+                      <div
+                        class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                      ></div>
+                      <div
+                        class="light-gradient w-[36px] h-[36px] border-solid border-black border-[3px] flex items-center justify-center"
+                      >
+                        <h2>15</h2>
+                      </div>
+                    </div>
+                    <div
+                      class="grow h-[40px] bg-[#43402E] flex justify-center items-center"
+                    >
+                      <div
+                        class="light-gradient w-[calc(100%-4px)] h-[36px] border-solid border-black border-[3px] flex items-center justify-start"
+                      >
+                        <h2 class="ml-[8px] whitespace-nowrap">YOU</h2>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                <!-- <div
-    class="bg-[url('images/BloodtokenDemon.png')] bg-contain bg-no-repeat w-[200px] max-w-[523px] h-[351px] grow mt-[20px]"
-  ></div> -->
               </div>
             </div>
             <div class="w-full min-h-[200px]"></div>
@@ -588,7 +756,8 @@
         <!-- Raids -->
         <div
           class="w-[100%] flex flex-col items-center justify-center"
-          x-show="false"
+          x-show="state == 2"
+          x-transition:enter.opacity.duration.500ms
         >
           <div
             class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
