@@ -122,16 +122,22 @@ p {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: black;
-  border-radius: 20px;
+  border: solid 2px #43402e;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(270deg, #fb0000 0%, #a01c6b 100%);
-  border-radius: 20px;
+  background: radial-gradient(
+    37.88% 50% at 37.88% 50%,
+    #d13e0f 0%,
+    #791503 100%
+  );
+  border: 3px solid transparent;
+  border-radius: 9px;
+  background-clip: content-box;
 }
