@@ -17,7 +17,7 @@
 
   <body
     class="bg-black"
-    x-data="{hamburgerActive: false, state: 1, expanded: false}"
+    x-data="{hamburgerActive: false, state: 1, expanded: false, raidPopup: false}"
   >
     <div class="w-full min-h-screen bg-[url('images/Background.png')] bg-cover">
       <div class="w-full min-h-screen bg-black bg-opacity-80 bg-cover">
@@ -709,8 +709,59 @@
             x-transition:enter.opacity.duration.500ms
           >
             <div
-              class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
+              class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px] relative"
             >
+              <div
+                x-show="raidPopup"
+                x-transition:enter.opacity.duration.500ms
+                class="bg-black bg-opacity-80 w-[100%] h-screen fixed z-50 left-0 top-0 items-center justify-center flex"
+              >
+                <div
+                  class="w-full xl:w-[390px] h-screen xl:h-[484px] bg-black flex flex-col justify-center xl:justify-center items-center px-10 border-none xl:border-solid border-[#43402E] border-[2px] relative"
+                >
+                  <div
+                    class="w-[100%] h-[100%] absolute hidden xl:block pointer-events-none"
+                  >
+                    <div
+                      class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+                    ></div>
+                    <div
+                      class="triangle absolute border-b-[#43402E] bottom-0 left-[calc(50%-11px)]"
+                    ></div>
+                    <div
+                      class="triangle absolute border-l-[#43402E] bottom-[-11px] right-[-11px] rotate-45"
+                    ></div>
+                    <div
+                      class="triangle absolute border-r-[#43402E] bottom-[-11px] left-[-11px] rotate-[-45deg]"
+                    ></div>
+                    <div
+                      class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+                    ></div>
+                    <div
+                      class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+                    ></div>
+                  </div>
+
+                  <h2 class="text-[24px] text-center mb-[30px]">
+                    CONFIRM YOUR DECISION ABOUT THIS RAID
+                  </h2>
+
+                  <div class="flex flex-col items-center justify-center">
+                    <div
+                      x-on:click="raidPopup = false"
+                      class="bg-[url('images/bigbutton.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center cursor-pointer"
+                    >
+                      <h1 class="text-[16px] px-[80px]">CONFIRM</h1>
+                    </div>
+                    <div
+                      x-on:click="raidPopup = false"
+                      class="bg-[url('images/BigButtonInactive.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[10px] cursor-pointer"
+                    >
+                      <h1 class="text-[16px] px-[80px]">CANCEL</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="w-full min-h-[100px]"></div>
               <h1 class="text-[48px] my-[50px]">RAIDS</h1>
               <div
@@ -721,7 +772,9 @@
                 >
                   <h2 class="ml-[40px]">THESE ARE YOUR CRAZY AS FUCK RAIDS</h2>
                 </div>
-                <div class="w-[100%] h-[100%] absolute hidden md:block z-10">
+                <div
+                  class="w-[100%] h-[100%] absolute hidden md:block z-10 pointer-events-none"
+                >
                   <!-- Middle top -->
                   <div
                     class="triangle-big absolute border-t-[#43402E] top-[5px] left-[calc(50%-15px)]"
@@ -831,7 +884,8 @@
                             </div>
                           </div>
                           <div
-                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
+                            x-on:click="console.log('clicked'); raidPopup = true"
+                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px] cursor-pointer"
                           >
                             <h1 class="text-[16px] text-[#928B64]">PICK</h1>
                           </div>
@@ -889,8 +943,8 @@
                         <div
                           class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
                         >
-                          <img src="images/RaidEasy.png" alt="" />
-                          <h2 class="">EASY</h2>
+                          <img src="images/RaidMedium.png" alt="" />
+                          <h2 class="">MEDIUM</h2>
                         </div>
                         <div
                           class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
@@ -940,7 +994,8 @@
                             </div>
                           </div>
                           <div
-                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
+                            x-on:click="console.log('clicked'); raidPopup = true"
+                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px] cursor-pointer"
                           >
                             <h1 class="text-[16px] text-[#928B64]">PICK</h1>
                           </div>
@@ -998,8 +1053,12 @@
                         <div
                           class="dark-gradient w-full h-[130px] border-solid border-[#43402E] border-[2px] flex items-center justify-center space-x-[20px]"
                         >
-                          <img src="images/RaidEasy.png" alt="" />
-                          <h2 class="">EASY</h2>
+                          <img
+                            src="images/RaidHard.png"
+                            class="mb-[20px]"
+                            alt=""
+                          />
+                          <h2 class="">HARD</h2>
                         </div>
                         <div
                           class="bg-black w-full h-[130px] border-solid border-[#43402E] border-[2px] p-[3px] flex flex-col justify-start items-center"
@@ -1049,7 +1108,8 @@
                             </div>
                           </div>
                           <div
-                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px]"
+                            x-on:click="console.log('clicked'); raidPopup = true"
+                            class="bg-[url('images/SmallButtonInactive.svg')] bg-cover w-[171px] h-[40px] flex items-center justify-center mt-[10px] cursor-pointer"
                           >
                             <h1 class="text-[16px] text-[#928B64]">PICK</h1>
                           </div>
