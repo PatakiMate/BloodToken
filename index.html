@@ -17,24 +17,26 @@
 
   <body
     class="bg-black"
-    x-data="{hamburgerActive: false, state: 1, expanded: false, raidPopup: false}"
+    x-data="{loggedIn: false, hamburgerActive: false, state: 0, expanded: false, raidPopup: false, bloodInfo: false, raidInfo: false, historyDropdown: false, historyElement: '10 MOST RECENT'}"
   >
     <div class="w-full min-h-screen bg-[url('images/Background.png')] bg-cover">
       <div class="w-full min-h-screen bg-black bg-opacity-80 bg-cover">
         <!-- Log In -->
         <div
           class="w-full h-[calc(100vh-100px)] flex items-center justify-center"
-          x-show="false"
+          x-show="loggedIn == false"
         >
           <div
             class="w-full h-[100px] fixed top-0 justify-center hidden xl:flex"
           >
-            <h1 class="mt-[20px] text-[48px]">LOG IN</h1>
+            <h1 class="mt-[20px] text-[48px]">BLOOD CONTRACT</h1>
           </div>
           <div
             class="w-full xl:w-[390px] h-screen xl:h-[484px] mt-[100px] bg-black flex flex-col justify-center xl:justify-start items-center px-10 border-none xl:border-solid border-[#43402E] border-[2px] relative"
           >
-            <div class="w-[100%] h-[100%] absolute hidden xl:block">
+            <div
+              class="w-[100%] h-[100%] absolute hidden xl:block pointer-events-none"
+            >
               <div
                 class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
               ></div>
@@ -56,22 +58,23 @@
             </div>
             <img src="images/LoginDemon.png" class="w-[328px] mt-10" alt="" />
             <h2 class="text-[24px] text-center">
-              Log in to the world<br />
-              of BLOOD tokens
+              Vampire Invasion Staking Platform
             </h2>
             <p class="text-center mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Earn $BLOOD tokens just for holding Vampire NFTs! Blood Contract
+              will be non-custodial staking without locking your NFTs – meaning
+              they will never leave your wallet.
             </p>
             <div
-              class="bg-[url('images/bigbutton.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[50px]"
+              class="bg-[url('images/BigButtonInactive.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[50px] cursor-pointer"
+              x-on:click="loggedIn = true; setTimeout(load, 100)"
             >
-              <h1 class="text-[16px] px-[80px]">LOG IN</h1>
+              <h1 class="text-[16px] px-[80px]">COMING IN Q1 23</h1>
             </div>
           </div>
         </div>
         <!-- Main -->
-        <div class="w-full" x-show="true">
+        <div class="w-full" x-show="loggedIn">
           <!-- Header -->
           <div
             class="w-full h-[100px] fixed top-0 justify-between items-center flex px-[15px] md:px-[80px] z-50"
@@ -246,7 +249,41 @@
               class="flex flex-col items-start justify-start w-full px-[15px] md:px-[80px]"
             >
               <div class="w-full min-h-[100px]"></div>
-              <h1 class="text-[48px] my-[50px]">BLOOD CONTRACT</h1>
+              <div class="flex items-center">
+                <h1 class="text-[48px] my-[50px] mr-[15px]">BLOOD CONTRACT</h1>
+                <img
+                  x-on:mouseover="bloodInfo= true"
+                  x-on:mouseover.away="bloodInfo = false"
+                  src="images/InfoButton.svg"
+                  alt=""
+                />
+                <div
+                  x-show="bloodInfo"
+                  x-transition
+                  class="max-w-[calc(100%-80px)] md:max-w-[400px] left-20px md:max-h-[150px] dark-gradient border-solid border-[#43402E] border-[2px] absolute md:relative md:ml-[15px]"
+                >
+                  <div class="w-[100%] h-[100%] absolute pointer-events-none">
+                    <div
+                      class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                    ></div>
+                    <div
+                      class="triangle-small absolute border-r-[#43402E] bottom-[-8px] left-[-8px] rotate-[-45deg]"
+                    ></div>
+                    <div
+                      class="triangle-small absolute border-l-[#43402E] top-[-8px] right-[-8px] rotate-[-45deg]"
+                    ></div>
+                    <div
+                      class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                    ></div>
+                  </div>
+                  <p class="m-[20px]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex
+                  </p>
+                </div>
+              </div>
               <div
                 class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
               >
@@ -291,7 +328,7 @@
                   class="w-[calc(100%-6px)] h-[calc(100%-89px)] absolute border-solid border-[#43402E] border-[2px] top-[86px] flex items-center"
                 ></div>
                 <div
-                  class="flex flex-col md:flex-row justify-start md:justify-between items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] md:space-x-5"
+                  class="flex flex-col lg:flex-row justify-start lg:justify-between items-center lg:items-start w-full mt-[86px] px-[20px] md:px-[40px] lg:space-x-5"
                 >
                   <div
                     class="w-full lg:max-w-[605px] mt-[40px] flex-col grow order-last lg:order-first mb-[40px] lg:mb[0px]"
@@ -480,7 +517,7 @@
                   </div>
                   <img
                     src="images/BloodtokenDemon.svg"
-                    class="mt-[20px] object-contain order-first md:order-last w-full lg:max-w-[50%]"
+                    class="mt-[20px] object-contain order-first lg:order-last w-full lg:max-w-[50%]"
                     alt=""
                   />
                   <!-- <div
@@ -763,7 +800,41 @@
                 </div>
               </div>
               <div class="w-full min-h-[100px]"></div>
-              <h1 class="text-[48px] my-[50px]">RAIDS</h1>
+              <div class="flex items-center">
+                <h1 class="text-[48px] my-[50px] mr-[15px]">RAIDS</h1>
+                <img
+                  x-on:mouseover="raidInfo= true"
+                  x-on:mouseover.away="raidInfo = false"
+                  src="images/InfoButton.svg"
+                  alt=""
+                />
+                <div
+                  x-show="raidInfo"
+                  x-transition
+                  class="max-w-[calc(100%-80px)] md:max-w-[400px] left-20px md:max-h-[150px] dark-gradient border-solid border-[#43402E] border-[2px] absolute md:relative md:ml-[15px]"
+                >
+                  <div class="w-[100%] h-[100%] absolute pointer-events-none">
+                    <div
+                      class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                    ></div>
+                    <div
+                      class="triangle-small absolute border-r-[#43402E] bottom-[-8px] left-[-8px] rotate-[-45deg]"
+                    ></div>
+                    <div
+                      class="triangle-small absolute border-l-[#43402E] top-[-8px] right-[-8px] rotate-[-45deg]"
+                    ></div>
+                    <div
+                      class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                    ></div>
+                  </div>
+                  <p class="m-[20px]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex
+                  </p>
+                </div>
+              </div>
               <div
                 class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
               >
@@ -1187,9 +1258,75 @@
                 class="w-full bg-black flex flex-col justify-center md:justify-start items-center border-none md:border-solid border-[#43402E] border-[2px] relative"
               >
                 <div
-                  class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center"
+                  class="w-[calc(100%-6px)] min-h-[80px] absolute border-solid border-[#43402E] border-[2px] top-[3px] flex items-center justify-between"
                 >
                   <h2 class="ml-[40px]">PAYOUTS HISTORY</h2>
+                  <div class="relative">
+                    <div
+                      x-bind:class="historyDropdown ? 'light-gradient' : 'dark-gradient'"
+                      class="border-[2px] border-solid border-[#43402E] w-[220px] h-[40px] mr-[40px] cursor-pointer"
+                    >
+                      <div
+                        x-on:click="historyDropdown = !historyDropdown"
+                        class="w-full h-full border-[2px] border-solid border-black flex items-center justify-between px-[8px]"
+                      >
+                        <h2
+                          x-bind:class="historyDropdown ? '' : 'text-[#928B64]'"
+                        >
+                          SHOW
+                        </h2>
+                        <h2
+                          x-text="historyElement"
+                          x-bind:class="historyDropdown ? '' : 'text-[#928B64]'"
+                        ></h2>
+                        <img src="images/DropdownArrow.svg" alt="" />
+                      </div>
+                    </div>
+                    <div
+                      x-show="historyDropdown"
+                      x-transition
+                      x-on:click.outside="historyDropdown = false"
+                      class="w-[220px] right-[40px] top-[43px] bg-black border-solid border-[#43402E] border-[2px] absolute z-30 flex flex-col items-center"
+                    >
+                      <div
+                        class="w-[100%] h-[100%] absolute pointer-events-none"
+                      >
+                        <div
+                          class="triangle-small absolute border-l-[#43402E] bottom-[-8px] right-[-8px] rotate-45"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-r-[#43402E] bottom-[-8px] left-[-8px] rotate-[-45deg]"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-l-[#43402E] top-[-8px] right-[-8px] rotate-[-45deg]"
+                        ></div>
+                        <div
+                          class="triangle-small absolute border-r-[#43402E] top-[-8px] left-[-8px] rotate-45"
+                        ></div>
+                      </div>
+                      <h2
+                        class="mb-[20px] mt-[20px] cursor-pointer"
+                        x-bind:class="$el.textContent.trim() == historyElement  ? '' : 'text-[#928B64]'"
+                        x-on:click="historyElement = $el.textContent.trim(); historyDropdown = false"
+                      >
+                        10 MOST RECENT
+                      </h2>
+                      <h2
+                        class="mb-[20px] cursor-pointer"
+                        x-bind:class="$el.textContent.trim() == historyElement  ? '' : 'text-[#928B64]'"
+                        x-on:click="historyElement = $el.textContent.trim(); historyDropdown = false"
+                      >
+                        5 MOST RECENT
+                      </h2>
+                      <h2
+                        class="mb-[20px] cursor-pointer"
+                        x-bind:class="$el.textContent.trim() == historyElement  ? '' : 'text-[#928B64]'"
+                        x-on:click="historyElement = $el.textContent.trim(); historyDropdown = false"
+                      >
+                        ALL
+                      </h2>
+                    </div>
+                  </div>
                 </div>
                 <div
                   class="w-[100%] h-[100%] absolute hidden md:block pointer-events-none"
