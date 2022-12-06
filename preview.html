@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blood Token</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="buttons.css" />
+  </head>
+
+  <body
+    class="bg-black"
+    x-data="{
+      loggedIn: false,
+      footerHover: 0,
+    }"
+  >
+    <div class="w-full min-h-screen bg-[url('images/Background.png')] bg-cover">
+      <div class="w-full min-h-screen bg-black bg-opacity-80 bg-cover">
+        <!-- Log In -->
+        <div
+          class="w-full h-[calc(100vh-100px)] flex items-center justify-center"
+          x-show="loggedIn == false"
+        >
+          <div
+            class="w-full h-[100px] fixed top-0 justify-center hidden xl:flex"
+          >
+            <h1 class="mt-[20px] text-[48px]">BLOOD CONTRACT</h1>
+          </div>
+          <div
+            class="w-full xl:w-[390px] h-screen xl:h-[484px] mt-[100px] bg-black flex flex-col justify-center xl:justify-start items-center px-10 border-none xl:border-solid border-[#43402E] border-[2px] relative"
+          >
+            <div
+              class="w-[100%] h-[100%] absolute hidden xl:block pointer-events-none"
+            >
+              <div
+                class="triangle absolute border-t-[#43402E] top-0 left-[calc(50%-11px)]"
+              ></div>
+              <div
+                class="triangle absolute border-b-[#43402E] bottom-0 left-[calc(50%-11px)]"
+              ></div>
+              <div
+                class="triangle absolute border-l-[#43402E] bottom-[-11px] right-[-11px] rotate-45"
+              ></div>
+              <div
+                class="triangle absolute border-r-[#43402E] bottom-[-11px] left-[-11px] rotate-[-45deg]"
+              ></div>
+              <div
+                class="triangle absolute border-l-[#43402E] top-[-11px] right-[-11px] rotate-[-45deg]"
+              ></div>
+              <div
+                class="triangle absolute border-r-[#43402E] top-[-11px] left-[-11px] rotate-45"
+              ></div>
+            </div>
+            <img src="images/LoginDemon.png" class="w-[328px] mt-10" alt="" />
+            <h2 class="text-[24px] text-center">
+              Vampire Invasion Staking Platform
+            </h2>
+            <p class="text-center mt-2">
+              Earn $BLOOD tokens just for holding Vampire NFTs! Blood Contract
+              will be non-custodial staking without locking your NFTs – meaning
+              they will never leave your wallet.
+            </p>
+            <!-- x-on:click="loggedIn = true; setTimeout(load, 100)" -->
+            <div
+              class="bg-[url('images/BigButtonInactive.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[50px] cursor-pointer"
+            >
+              <h1 class="text-[16px] px-[80px]">COMING IN Q1 23</h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full h-[100px] relative flex justify-between items-center px-[15px] md:px-[80px]"
+        >
+          <a
+            href="https://vampires.bajuzki.art"
+            target="_blank"
+            x-on:mouseover="footerHover = 1"
+            x-on:mouseover.away="if(footerHover == 1) {footerHover = 0}"
+            class="relative w-[64px] h-[36px]"
+          >
+            <img
+              x-show="footerHover != 1"
+              src="images/BajuzkiLogo.svg"
+              alt=""
+            />
+            <div
+              x-show="footerHover == 1"
+              class="bg-[url('images/BajuzkiLogoActive.svg')] bg-cover top-0 left-0 w-full h-full absolute"
+            ></div>
+          </a>
+          <h1 class="text-[6px] md:text-[12px]">
+            VAMPIRE INVASION BY BAJUZKI 2022 • ALL RIGHTS RESERVED
+          </h1>
+          <div class="flex gap-3">
+            <a
+              href="https://twitter.com/bajuzki"
+              target="_blank"
+              x-on:mouseover="footerHover = 2"
+              x-on:mouseover.away="if(footerHover == 2) {footerHover = 0}"
+              class="w-[24px] relative"
+            >
+              <img x-show="footerHover != 2" src="images/Twitter.svg" alt="" />
+              <div
+                x-show="footerHover == 2"
+                class="bg-[url('images/TwitterActive.svg')] bg-cover top-0 left-0 w-full h-full absolute"
+              ></div>
+            </a>
+            <a
+              href="https://discord.com/invite/aD239Gwx4X"
+              target="_blank"
+              x-on:mouseover="footerHover = 3"
+              x-on:mouseover.away="if(footerHover == 3) {footerHover = 0}"
+              class="w-[24px] relative"
+            >
+              <img x-show="footerHover != 3" src="images/Discord.svg" alt="" />
+              <div
+                x-show="footerHover == 3"
+                class="bg-[url('images/DiscordActive.svg')] bg-cover top-0 left-0 w-full h-full absolute"
+              ></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

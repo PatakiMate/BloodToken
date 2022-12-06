@@ -12,7 +12,6 @@
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="buttons.css" />
   </head>
 
   <body
@@ -80,11 +79,11 @@
               will be non-custodial staking without locking your NFTs – meaning
               they will never leave your wallet.
             </p>
-            <!-- x-on:click="loggedIn = true; setTimeout(load, 100)" -->
             <div
-              class="bg-[url('images/BigButtonInactive.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[50px] cursor-pointer"
+              x-on:click="loggedIn = true; setTimeout(load, 100)"
+              class="bg-[url('images/BigButton.svg')] bg-cover w-[315px] h-[40px] flex items-center justify-center mt-[50px] cursor-pointer"
             >
-              <h1 class="text-[16px] px-[80px]">COMING IN Q1 23</h1>
+              <h1 class="text-[16px] px-[80px]">LOGIN</h1>
             </div>
           </div>
         </div>
@@ -674,7 +673,7 @@
                         x-on:click="expanded = true"
                         class="bg-[url('images/MiniButtonInactive.svg')] bg-cover w-[71px] min-h-[40px] flex items-center justify-center relative hover:cursor-pointer"
                       >
-                        <img src="images/Dots.png" alt="" />
+                        <img src="images/Dots.svg" alt="" />
                       </div>
                       <div class="w-full flex gap-[3px]">
                         <div
@@ -1502,6 +1501,7 @@
             </div>
           </div>
         </div>
+        <!-- Footer -->
         <div
           class="w-full h-[100px] relative flex justify-between items-center px-[15px] md:px-[80px]"
         >
