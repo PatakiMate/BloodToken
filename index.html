@@ -258,7 +258,15 @@
                   </h2>
                 </div>
                 <div class="bg-black h-[40px] flex items-center justify-center">
-                  <h2 class="text-[#928B64] hover:cursor-pointer">LOG OUT</h2>
+                  <h2
+                    x-on:mouseover="headerHover = 4"
+                    x-on:mouseover.away="if(headerHover == 4) {headerHover = -1}"
+                    x-bind:class="headerHover == 4 ? 'text-white' : 'text-[#928B64]'"
+                    x-on:click="loggedIn = false; hamburgerActive = false; state = 0"
+                    class="text-[#928B64] hover:cursor-pointer"
+                  >
+                    LOG OUT
+                  </h2>
                 </div>
               </div>
             </div>
